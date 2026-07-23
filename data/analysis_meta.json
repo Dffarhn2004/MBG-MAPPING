@@ -1,0 +1,286 @@
+{
+  "n_wilayah": 409,
+  "reference_total": 514,
+  "coverage": {
+    "n_referensi_ikp": 514,
+    "n_dianalisis": 409,
+    "n_tidak_masuk": 105,
+    "coverage_pct": 79.6,
+    "n_missing_stunting": 105,
+    "n_missing_kemiskinan": 0,
+    "n_missing_peserta": 0,
+    "excluded_sample": [
+      {
+        "kode_kab_kota": 1112,
+        "kabupaten_kota_normalized": "Aceh Barat Daya",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1204,
+        "kabupaten_kota_normalized": "Nias",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1205,
+        "kabupaten_kota_normalized": "Langkat",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1206,
+        "kabupaten_kota_normalized": "Karo",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1207,
+        "kabupaten_kota_normalized": "Deli Serdang",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1219,
+        "kabupaten_kota_normalized": "Batu Bara",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1220,
+        "kabupaten_kota_normalized": "Padang Lawas Utara",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1221,
+        "kabupaten_kota_normalized": "Padang Lawas",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1222,
+        "kabupaten_kota_normalized": "Labuhan Batu Selatan",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1223,
+        "kabupaten_kota_normalized": "Labuhan Batu Utara",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1224,
+        "kabupaten_kota_normalized": "Nias Utara",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1271,
+        "kabupaten_kota_normalized": "Medan",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1273,
+        "kabupaten_kota_normalized": "Sibolga",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1276,
+        "kabupaten_kota_normalized": "Tebing Tinggi",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1311,
+        "kabupaten_kota_normalized": "Solok Selatan",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1401,
+        "kabupaten_kota_normalized": "Kampar",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1404,
+        "kabupaten_kota_normalized": "Indragiri Hilir",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1405,
+        "kabupaten_kota_normalized": "Pelalawan",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1501,
+        "kabupaten_kota_normalized": "Kerinci",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1504,
+        "kabupaten_kota_normalized": "Batang Hari",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1505,
+        "kabupaten_kota_normalized": "Muaro Jambi",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1508,
+        "kabupaten_kota_normalized": "Bungo",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1606,
+        "kabupaten_kota_normalized": "Musi Banyuasin",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1607,
+        "kabupaten_kota_normalized": "Banyuasin",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1608,
+        "kabupaten_kota_normalized": "Ogan Komering Ulu Timur",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1613,
+        "kabupaten_kota_normalized": "Musi Rawas Utara",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1672,
+        "kabupaten_kota_normalized": "Pagar Alam",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1701,
+        "kabupaten_kota_normalized": "Bengkulu Selatan",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 1708,
+        "kabupaten_kota_normalized": "Kepahiang",
+        "alasan": "stunting tidak tersedia"
+      },
+      {
+        "kode_kab_kota": 2101,
+        "kabupaten_kota_normalized": "Bintan",
+        "alasan": "stunting tidak tersedia"
+      }
+    ]
+  },
+  "default_weights": {
+    "stunting": 0.4,
+    "kemiskinan": 0.25,
+    "ikp": 0.2,
+    "peserta_didik": 0.15
+  },
+  "weight_scenarios": {
+    "Fokus kerentanan": {
+      "stunting": 0.4,
+      "kemiskinan": 0.25,
+      "ikp": 0.2,
+      "peserta_didik": 0.15
+    },
+    "Seimbang": {
+      "stunting": 0.35,
+      "kemiskinan": 0.25,
+      "ikp": 0.15,
+      "peserta_didik": 0.25
+    },
+    "Fokus cakupan": {
+      "stunting": 0.3,
+      "kemiskinan": 0.2,
+      "ikp": 0.15,
+      "peserta_didik": 0.35
+    }
+  },
+  "methodology_notes": {
+    "peserta_didik": "Kolom 'Jumlah Peserta Didik' diambil dari portal Residu Data Induk Kemendikdasmen, tetapi merupakan **total peserta didik** (bukan hitungan residu NISN/kependudukan). Total nasional ~70 juta — konsisten dengan populasi siswa lintas jenjang, bukan orde residual.",
+    "ikp_invert": "Nilai IKP dibalik setelah normalisasi min-max karena IKP lebih tinggi berarti ketahanan pangan lebih baik; IKP rendah menaikkan skor kerentanan.",
+    "kuartil": "Kategori prioritas memakai kuartil skor (qcut): posisi relatif antarwilayah dalam dataset, bukan batas standar kebijakan nasional.",
+    "skor": "Skor 0–100 adalah skor relatif hasil normalisasi gabungan indikator. Bukan persentase kebutuhan dan bukan estimasi anggaran."
+  },
+  "cluster": {
+    "best_k": 2,
+    "best_silhouette": 0.3141542325874903,
+    "silhouette_scores": {
+      "2": 0.3141542325874903,
+      "3": 0.2569537550813358,
+      "4": 0.25445831859042717,
+      "5": 0.27590677446064815,
+      "6": 0.2739885219646555,
+      "7": 0.2454066861235702,
+      "8": 0.2516619798677244
+    },
+    "inertia_scores": {
+      "2": 1157.6991325262902,
+      "3": 930.0297214581481,
+      "4": 766.1525597509883,
+      "5": 657.5480532540138,
+      "6": 571.927585969123,
+      "7": 511.3426913673036,
+      "8": 463.4521230645695
+    },
+    "cluster_names": {
+      "0": "Gizi buruk, kemiskinan tinggi, IKP rendah",
+      "1": "Kondisi relatif baik"
+    },
+    "cluster_counts": {
+      "Kondisi relatif baik": 289,
+      "Gizi buruk, kemiskinan tinggi, IKP rendah": 120
+    },
+    "cluster_profile": [
+      {
+        "cluster_id": 0,
+        "stunting_pct": 22.2975,
+        "persen_penduduk_miskin": 15.731583333333333,
+        "ikp": 65.11958333333334,
+        "jumlah_peserta_didik": 56432.74166666667,
+        "cluster_label": "Gizi buruk, kemiskinan tinggi, IKP rendah",
+        "median_peserta_didik": 41564.0,
+        "n_wilayah": 120
+      },
+      {
+        "cluster_id": 1,
+        "stunting_pct": 15.453633217993081,
+        "persen_penduduk_miskin": 7.605397923875433,
+        "ikp": 80.87861591695501,
+        "jumlah_peserta_didik": 170701.31141868513,
+        "cluster_label": "Kondisi relatif baik",
+        "median_peserta_didik": 101948.0,
+        "n_wilayah": 289
+      }
+    ],
+    "cluster_profile_z": [
+      {
+        "cluster_id": 0,
+        "stunting_pct": 0.8566644622558834,
+        "persen_penduduk_miskin": 0.9723565995018487,
+        "ikp": -0.9602349057227092,
+        "jumlah_peserta_didik": -0.4638942785300707,
+        "cluster_label": "Gizi buruk, kemiskinan tinggi, IKP rendah"
+      },
+      {
+        "cluster_id": 1,
+        "stunting_pct": -0.35570842723427637,
+        "persen_penduduk_miskin": -0.40374668491426235,
+        "ikp": 0.39871345566340816,
+        "jumlah_peserta_didik": 0.19262046167338576,
+        "cluster_label": "Kondisi relatif baik"
+      }
+    ],
+    "note": "Segmentasi bersifat eksploratif. Silhouette relatif rendah menandakan karakteristik antarcluster masih tumpang tindih."
+  },
+  "national_means": {
+    "stunting_pct": 17.46161369193154,
+    "persen_penduduk_miskin": 9.98960880195599,
+    "ikp": 76.25493887530563,
+    "jumlah_peserta_didik": 137175.08068459659,
+    "priority_score": 27.392201903191047
+  },
+  "top_wilayah": {
+    "kabupaten_kota_normalized": "Supiori",
+    "provinsi_normalized": "Papua",
+    "priority_score": 66.27846877736366,
+    "pct_priority": 100.0,
+    "contrib_stunting": 23.46504559270517,
+    "contrib_kemiskinan": 25.0,
+    "contrib_ikp": 17.796066396987026,
+    "contrib_peserta": 0.017356787671455355
+  },
+  "peserta_didik_national_sum": 70539269
+}
