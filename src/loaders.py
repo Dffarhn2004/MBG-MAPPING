@@ -22,7 +22,6 @@ GEOJSON_PROV_URL = (
     "https://cdn.jsdelivr.net/gh/superpikar/indonesia-geojson@master/indonesia-province-simple.json"
 )
 
-# Nama di geojson provinsi → nama canonical dashboard
 PROV_GEO_ALIASES = {
     "nanggroe aceh darussalam": "Aceh",
     "dki jakarta": "DKI Jakarta",
@@ -42,20 +41,36 @@ def load_analysis() -> pd.DataFrame:
             f"Belum ada {path}. Jalankan: python data/build_analysis.py"
         )
     df = pd.read_csv(path)
-    return df.assign(
+    if "kode_kab_kota" not in df.columns and "kode_wilayah" in df.columns:
+        df["kode_kab_kota"] = df["kode_wilayah"]
+    df = df.assign(
         kode_kab_kota_str=df["kode_kab_kota"].astype(int).astype(str).str.zfill(4)
     )
+    if "provinsi_normalized" not in df.columns and "provinsi" in df.columns:
+        df["provinsi_normalized"] = df["provinsi"]
+    if "kabupaten_kota_normalized" not in df.columns and "kabupaten_kota" in df.columns:
+        df["kabupaten_kota_normalized"] = df["kabupaten_kota"]
+    if "rank" not in df.columns and "current_rank" in df.columns:
+        df["rank"] = df["current_rank"]
+    if "priority_score" not in df.columns and "current_score_2024" in df.columns:
+        df["priority_score"] = df["current_score_2024"]
+    return df
 
 
 @st.cache_data(show_spinner=False)
 def load_meta() -> dict:
     path = DATA / "analysis_meta.json"
+    if not path.exists():
+        return {}
     return json.loads(path.read_text(encoding="utf-8"))
 
 
 @st.cache_data(show_spinner=False)
-def load_sensitivity() -> pd.DataFrame:
-    return pd.read_csv(DATA / "sensitivity_ranks.csv")
+def load_excluded() -> pd.DataFrame:
+    path = DATA / "excluded_wilayah.csv"
+    if not path.exists():
+        return pd.DataFrame()
+    return pd.read_csv(path)
 
 
 def _detect_geo_id_field(geojson: dict, sample_codes: set[str]) -> str | None:
@@ -99,16 +114,22 @@ def load_geojson_kab(sample_codes: tuple[str, ...]) -> tuple[dict | None, str | 
             if r.status_code != 200 or len(r.content) < 10_000:
                 continue
             geo = r.json()
-            # normalisasi kode BPS bila ada CC_2 (GADM)
             for f in geo.get("features", []):
                 cc = f.get("properties", {}).get("CC_2")
                 if cc is not None:
                     f["properties"]["_kode4"] = str(cc).split(".")[0].zfill(4)[-4:]
-            field = "_kode4" if any(
-                "_kode4" in (f.get("properties") or {}) for f in geo.get("features", [])[:5]
-            ) else _detect_geo_id_field(geo, sample_set)
+            field = (
+                "_kode4"
+                if any(
+                    "_kode4" in (f.get("properties") or {})
+                    for f in geo.get("features", [])[:5]
+                )
+                else _detect_geo_id_field(geo, sample_set)
+            )
             if field:
-                cache_path.write_text(json.dumps(geo, separators=(",", ":")), encoding="utf-8")
+                cache_path.write_text(
+                    json.dumps(geo, separators=(",", ":")), encoding="utf-8"
+                )
                 return geo, field
         except Exception:
             continue
@@ -131,21 +152,20 @@ def load_geojson_provinsi() -> dict | None:
         return None
 
 
-def normalize_prov_geo_name(name: str) -> str:
-    key = str(name).strip().lower()
-    if key in PROV_GEO_ALIASES:
-        return PROV_GEO_ALIASES[key]
-    # title-case fallback
-    return " ".join(w.capitalize() for w in key.split())
-
-
 def format_number(n: float, kind: str = "int") -> str:
     if pd.isna(n):
         return "-"
     if kind == "pct":
         return f"{n:,.1f}%".replace(",", "X").replace(".", ",").replace("X", ".")
+    if kind == "pct2":
+        return f"{n:,.2f}%".replace(",", "X").replace(".", ",").replace("X", ".")
     if kind == "score":
         return f"{n:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
-    if kind == "juta":
-        return f"{n / 1_000_000:,.1f} Juta".replace(",", "X").replace(".", ",").replace("X", ".")
+    if kind == "score2":
+        return f"{n:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    if kind == "delta":
+        sign = "+" if n > 0 else ""
+        return f"{sign}{n:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    if kind == "sil":
+        return f"{n:,.3f}".replace(",", "X").replace(".", ",").replace("X", ".")
     return f"{int(round(n)):,}".replace(",", ".")

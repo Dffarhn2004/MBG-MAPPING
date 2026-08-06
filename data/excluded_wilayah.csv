@@ -1,106 +1,142 @@
-﻿kode_kab_kota,kabupaten_kota_normalized,alasan
-1112,Aceh Barat Daya,stunting tidak tersedia
-1204,Nias,stunting tidak tersedia
-1205,Langkat,stunting tidak tersedia
-1206,Karo,stunting tidak tersedia
-1207,Deli Serdang,stunting tidak tersedia
-1219,Batu Bara,stunting tidak tersedia
-1220,Padang Lawas Utara,stunting tidak tersedia
-1221,Padang Lawas,stunting tidak tersedia
-1222,Labuhan Batu Selatan,stunting tidak tersedia
-1223,Labuhan Batu Utara,stunting tidak tersedia
-1224,Nias Utara,stunting tidak tersedia
-1271,Medan,stunting tidak tersedia
-1273,Sibolga,stunting tidak tersedia
-1276,Tebing Tinggi,stunting tidak tersedia
-1311,Solok Selatan,stunting tidak tersedia
-1401,Kampar,stunting tidak tersedia
-1404,Indragiri Hilir,stunting tidak tersedia
-1405,Pelalawan,stunting tidak tersedia
-1501,Kerinci,stunting tidak tersedia
-1504,Batang Hari,stunting tidak tersedia
-1505,Muaro Jambi,stunting tidak tersedia
-1508,Bungo,stunting tidak tersedia
-1606,Musi Banyuasin,stunting tidak tersedia
-1607,Banyuasin,stunting tidak tersedia
-1608,Ogan Komering Ulu Timur,stunting tidak tersedia
-1613,Musi Rawas Utara,stunting tidak tersedia
-1672,Pagar Alam,stunting tidak tersedia
-1701,Bengkulu Selatan,stunting tidak tersedia
-1708,Kepahiang,stunting tidak tersedia
-2101,Bintan,stunting tidak tersedia
-3201,Bogor,stunting tidak tersedia
-3207,Ciamis,stunting tidak tersedia
-3209,Cirebon,stunting tidak tersedia
-3216,Bekasi,stunting tidak tersedia
-3272,Sukabumi,stunting tidak tersedia
-3307,Wonosobo,stunting tidak tersedia
-3308,Magelang,stunting tidak tersedia
-3313,Karanganyar,stunting tidak tersedia
-3319,Kudus,stunting tidak tersedia
-3320,Jepara,stunting tidak tersedia
-3322,Semarang,stunting tidak tersedia
-3502,Ponorogo,stunting tidak tersedia
-3513,Probolinggo,stunting tidak tersedia
-3515,Sidoarjo,stunting tidak tersedia
-3528,Pamekasan,stunting tidak tersedia
-3574,Probolinggo,stunting tidak tersedia
-3576,Mojokerto,stunting tidak tersedia
-3578,Surabaya,stunting tidak tersedia
-3673,Serang,stunting tidak tersedia
-5171,Denpasar,stunting tidak tersedia
-5201,Lombok Barat,stunting tidak tersedia
-5202,Lombok Tengah,stunting tidak tersedia
-5206,Bima,stunting tidak tersedia
-5207,Sumbawa Barat,stunting tidak tersedia
-5321,Malaka,stunting tidak tersedia
-6106,Kapuas Hulu,stunting tidak tersedia
-6110,Melawai,stunting tidak tersedia
-6202,Waringin Timur,stunting tidak tersedia
-6203,Kapuas,stunting tidak tersedia
-6206,Katingan,stunting tidak tersedia
-6209,Lamandau,stunting tidak tersedia
-6301,Tanah Laut,stunting tidak tersedia
-6306,Hulu Sungai Selatan,stunting tidak tersedia
-6307,Hulu Sungai Tengah,stunting tidak tersedia
-6309,Tabalong,stunting tidak tersedia
-6501,Bulungan,stunting tidak tersedia
-6503,Nunukan,stunting tidak tersedia
-7107,Minahasa Tenggara,stunting tidak tersedia
-7110,Bolaang Mongondow Timur,stunting tidak tersedia
-7305,Takalar,stunting tidak tersedia
-7307,Sinjai,stunting tidak tersedia
-7309,Maros,stunting tidak tersedia
-7314,Sidenreng Rappang,stunting tidak tersedia
-7317,Luwu,stunting tidak tersedia
-7405,Konawe Selatan,stunting tidak tersedia
-7408,Kolaka Utara,stunting tidak tersedia
-7605,Majene,stunting tidak tersedia
-8202,Halmahera Tengah,stunting tidak tersedia
-8205,Kepulauan Sula,stunting tidak tersedia
-8207,Pulau Morotai,stunting tidak tersedia
-9106,Biak Namfor,stunting tidak tersedia
-9111,Keerom,stunting tidak tersedia
-9171,Jayapura,stunting tidak tersedia
-9209,Tambrauw,stunting tidak tersedia
-9210,Maybrat,stunting tidak tersedia
-9271,Sorong,stunting tidak tersedia
-9302,Boven Digoel,stunting tidak tersedia
-9303,Mappi,stunting tidak tersedia
-9304,Asmat,stunting tidak tersedia
-9401,Nabire,stunting tidak tersedia
-9402,Puncak Jaya,stunting tidak tersedia
-9403,Paniai,stunting tidak tersedia
-9404,Mimika,stunting tidak tersedia
-9405,Puncak,stunting tidak tersedia
-9406,Dogiyai,stunting tidak tersedia
-9407,Intan Jaya,stunting tidak tersedia
-9408,Deiyai,stunting tidak tersedia
-9501,Jayawijaya,stunting tidak tersedia
-9502,Pegunungan Bintang,stunting tidak tersedia
-9503,Yahukimo,stunting tidak tersedia
-9504,Tolikara,stunting tidak tersedia
-9505,Mamberamo Tengah,stunting tidak tersedia
-9506,Yalimo,stunting tidak tersedia
-9507,Lanny Jaya,stunting tidak tersedia
-9508,Nduga,stunting tidak tersedia
+﻿kode_wilayah,kabupaten_kota,provinsi,alasan
+1112,Aceh Barat Daya,Aceh,stunting kosong 2024
+1204,Nias,Sumatera Utara,stunting kosong 2024
+1205,Langkat,Sumatera Utara,stunting kosong 2024
+1206,Karo,Sumatera Utara,stunting kosong 2024
+1207,Deli Serdang,Sumatera Utara,stunting kosong 2024
+1219,Batu Bara,Sumatera Utara,stunting kosong 2024
+1220,Padang Lawas Utara,Sumatera Utara,stunting kosong 2024
+1221,Padang Lawas,Sumatera Utara,stunting kosong 2024
+1222,Labuhan Batu Selatan,Sumatera Utara,stunting kosong 2024
+1223,Labuhan Batu Utara,Sumatera Utara,stunting kosong 2024
+1224,Nias Utara,Sumatera Utara,stunting kosong 2024
+1271,Medan,Sumatera Utara,stunting kosong 2024
+1273,Sibolga,Sumatera Utara,stunting kosong 2024
+1276,Tebing Tinggi,Sumatera Utara,stunting kosong 2024
+1311,Solok Selatan,Sumatera Barat,stunting kosong 2024
+1401,Kampar,Riau,stunting kosong 2024
+1404,Indragiri Hilir,Riau,stunting kosong 2024
+1405,Pelalawan,Riau,stunting kosong 2024
+1501,Kerinci,Jambi,stunting kosong 2024
+1504,Batang Hari,Jambi,stunting kosong 2024
+1505,Muaro Jambi,Jambi,stunting kosong 2024
+1508,Bungo,Jambi,stunting kosong 2024
+1606,Musi Banyuasin,Sumatera Selatan,stunting kosong 2022; stunting kosong 2023; stunting kosong 2024
+1607,Banyuasin,Sumatera Selatan,stunting kosong 2024
+1608,Ogan Komering Ulu Timur,Sumatera Selatan,stunting kosong 2024
+1613,Musi Rawas Utara,Sumatera Selatan,stunting kosong 2024
+1672,Pagar Alam,Sumatera Selatan,stunting kosong 2024
+1701,Bengkulu Selatan,Bengkulu,stunting kosong 2024
+1708,Kepahiang,Bengkulu,stunting kosong 2024
+1812,Tulang Bawang Barat,Lampung,stunting kosong 2022; stunting kosong 2023
+2101,Bintan,Kep. Riau,stunting kosong 2024
+3201,Bogor,Jawa Barat,stunting kosong 2024
+3207,Ciamis,Jawa Barat,stunting kosong 2024
+3209,Cirebon,Jawa Barat,stunting kosong 2024
+3216,Bekasi,Jawa Barat,stunting kosong 2024
+3272,Sukabumi,Jawa Barat,stunting kosong 2024
+3304,Banjarnegara,Jawa Tengah,stunting kosong 2023
+3307,Wonosobo,Jawa Tengah,stunting kosong 2023; stunting kosong 2024
+3308,Magelang,Jawa Tengah,stunting kosong 2024
+3309,Boyolali,Jawa Tengah,stunting kosong 2023
+3310,Klaten,Jawa Tengah,stunting kosong 2023
+3313,Karanganyar,Jawa Tengah,stunting kosong 2024
+3319,Kudus,Jawa Tengah,stunting kosong 2024
+3320,Jepara,Jawa Tengah,stunting kosong 2023; stunting kosong 2024
+3322,Semarang,Jawa Tengah,stunting kosong 2024
+3325,Batang,Jawa Tengah,stunting kosong 2023
+3372,Surakarta,Jawa Tengah,stunting kosong 2023
+3374,Semarang,Jawa Tengah,stunting kosong 2023
+3502,Ponorogo,Jawa Timur,stunting kosong 2024
+3513,Probolinggo,Jawa Timur,stunting kosong 2024
+3515,Sidoarjo,Jawa Timur,stunting kosong 2024
+3528,Pamekasan,Jawa Timur,stunting kosong 2024
+3574,Probolinggo,Jawa Timur,stunting kosong 2024
+3576,Mojokerto,Jawa Timur,stunting kosong 2024
+3578,Surabaya,Jawa Timur,stunting kosong 2024
+3673,Serang,Banten,stunting kosong 2024
+5171,Denpasar,Bali,stunting kosong 2024
+5201,Lombok Barat,Nusa Tenggara Barat,stunting kosong 2024
+5202,Lombok Tengah,Nusa Tenggara Barat,stunting kosong 2024
+5206,Bima,Nusa Tenggara Barat,stunting kosong 2024
+5207,Sumbawa Barat,Nusa Tenggara Barat,stunting kosong 2024
+5301,Kupang,Nusa Tenggara Timur,stunting kosong 2022
+5302,Timor Tengah Selatan,Nusa Tenggara Timur,stunting kosong 2022
+5303,Timor Tengah Utara,Nusa Tenggara Timur,stunting kosong 2022
+5304,Belu,Nusa Tenggara Timur,stunting kosong 2022
+5305,Alor,Nusa Tenggara Timur,stunting kosong 2022
+5306,Flores Timur,Nusa Tenggara Timur,stunting kosong 2022
+5307,Sikka,Nusa Tenggara Timur,stunting kosong 2022
+5308,Ende,Nusa Tenggara Timur,stunting kosong 2022
+5309,Ngada,Nusa Tenggara Timur,stunting kosong 2022
+5310,Manggarai,Nusa Tenggara Timur,stunting kosong 2022
+5311,Sumba Timur,Nusa Tenggara Timur,stunting kosong 2022
+5312,Sumba Barat,Nusa Tenggara Timur,stunting kosong 2022
+5313,Lembata,Nusa Tenggara Timur,stunting kosong 2022
+5314,Rote Ndao,Nusa Tenggara Timur,stunting kosong 2022
+5315,Manggarai Barat,Nusa Tenggara Timur,stunting kosong 2022
+5316,Nagekeo,Nusa Tenggara Timur,stunting kosong 2022
+5317,Sumba Tengah,Nusa Tenggara Timur,stunting kosong 2022
+5318,Sumba Barat Daya,Nusa Tenggara Timur,stunting kosong 2022
+5319,Manggarai Timur,Nusa Tenggara Timur,stunting kosong 2022
+5320,Sabu Raijua,Nusa Tenggara Timur,stunting kosong 2022
+5321,Malaka,Nusa Tenggara Timur,stunting kosong 2022; stunting kosong 2024
+5371,Kupang,Nusa Tenggara Timur,stunting kosong 2022
+6104,Ketapang,Kalimantan Barat,stunting kosong 2023
+6106,Kapuas Hulu,Kalimantan Barat,stunting kosong 2024
+6110,Melawai,Kalimantan Barat,stunting kosong 2024
+6171,Pontianak,Kalimantan Barat,stunting kosong 2023
+6202,Waringin Timur,Kalimantan Tengah,stunting kosong 2024
+6203,Kapuas,Kalimantan Tengah,stunting kosong 2024
+6204,Barito Selatan,Kalimantan Tengah,stunting kosong 2023
+6206,Katingan,Kalimantan Tengah,stunting kosong 2024
+6209,Lamandau,Kalimantan Tengah,stunting kosong 2024
+6211,Pulang Pisau,Kalimantan Tengah,stunting kosong 2023
+6301,Tanah Laut,Kalimantan Selatan,stunting kosong 2024
+6306,Hulu Sungai Selatan,Kalimantan Selatan,stunting kosong 2024
+6307,Hulu Sungai Tengah,Kalimantan Selatan,stunting kosong 2024
+6309,Tabalong,Kalimantan Selatan,stunting kosong 2024
+6403,Berau,Kalimantan Timur,stunting kosong 2023
+6411,Mahakam Ulu,Kalimantan Timur,stunting kosong 2022; stunting kosong 2023
+6501,Bulungan,Kalimantan Utara,stunting kosong 2024
+6503,Nunukan,Kalimantan Utara,stunting kosong 2024
+7103,Kepulauan Sangihe,Sulawesi Utara,stunting kosong 2022; stunting kosong 2023
+7107,Minahasa Tenggara,Sulawesi Utara,stunting kosong 2024
+7110,Bolaang Mongondow Timur,Sulawesi Utara,stunting kosong 2024
+7305,Takalar,Sulawesi Selatan,stunting kosong 2024
+7307,Sinjai,Sulawesi Selatan,stunting kosong 2024
+7309,Maros,Sulawesi Selatan,stunting kosong 2024
+7314,Sidenreng Rappang,Sulawesi Selatan,stunting kosong 2024
+7317,Luwu,Sulawesi Selatan,stunting kosong 2024
+7405,Konawe Selatan,Sulawesi Tenggara,stunting kosong 2024
+7408,Kolaka Utara,Sulawesi Tenggara,stunting kosong 2024
+7605,Majene,Sulawesi Barat,stunting kosong 2024
+8202,Halmahera Tengah,Maluku Utara,stunting kosong 2024
+8205,Kepulauan Sula,Maluku Utara,stunting kosong 2024
+8207,Pulau Morotai,Maluku Utara,stunting kosong 2024
+9106,Biak Namfor,Papua,stunting kosong 2024
+9111,Keerom,Papua,stunting kosong 2024
+9171,Jayapura,Papua,stunting kosong 2024
+9202,Manokwari,Papua Barat,stunting kosong 2023
+9209,Tambrauw,Papua Barat,stunting kosong 2024
+9210,Maybrat,Papua Barat,stunting kosong 2023; stunting kosong 2024
+9271,Sorong,Papua Barat,stunting kosong 2024
+9302,Boven Digoel,Papua,stunting kosong 2024
+9303,Mappi,Papua,stunting kosong 2024
+9304,Asmat,Papua,stunting kosong 2023; stunting kosong 2024
+9401,Nabire,Papua,stunting kosong 2024
+9402,Puncak Jaya,Papua,stunting kosong 2023; stunting kosong 2024
+9403,Paniai,Papua,stunting kosong 2023; stunting kosong 2024
+9404,Mimika,Papua,stunting kosong 2024
+9405,Puncak,Papua,stunting kosong 2023; stunting kosong 2024
+9406,Dogiyai,Papua,stunting kosong 2023; stunting kosong 2024
+9407,Intan Jaya,Papua,stunting kosong 2023; stunting kosong 2024
+9408,Deiyai,Papua,stunting kosong 2024
+9501,Jayawijaya,Papua,stunting kosong 2024
+9502,Pegunungan Bintang,Papua,stunting kosong 2023; stunting kosong 2024
+9503,Yahukimo,Papua,stunting kosong 2023; stunting kosong 2024
+9504,Tolikara,Papua,stunting kosong 2023; stunting kosong 2024
+9505,Mamberamo Tengah,Papua,stunting kosong 2024
+9506,Yalimo,Papua,stunting kosong 2023; stunting kosong 2024
+9507,Lanny Jaya,Papua,stunting kosong 2024
+9508,Nduga,Papua,stunting kosong 2023; stunting kosong 2024

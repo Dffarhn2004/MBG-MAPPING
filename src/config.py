@@ -1,83 +1,144 @@
-"""Konstanta bobot & skenario skor prioritas MBG."""
+"""Konstanta bobot, status keputusan, dan label proyeksi (display layer).
+
+Catatan: formula skor/proyeksi di scoring.py tidak diubah di sini.
+Layer ini hanya merapikan label, warna, dan salinan untuk dashboard.
+"""
 
 from __future__ import annotations
 
-# Bobot default (transparansi akademik — diuji lewat sensitivity analysis)
+# Bobot renorm dari 40:25:20 (tanpa peserta didik) → 47:29:24
 DEFAULT_WEIGHTS = {
-    "stunting": 0.40,
-    "kemiskinan": 0.25,
-    "ikp": 0.20,  # inverted: IKP rendah = kerentanan tinggi
-    "peserta_didik": 0.15,
+    "stunting": 0.47,
+    "kemiskinan": 0.29,
+    "ikp": 0.24,
 }
 
-WEIGHT_SCENARIOS = {
-    "Fokus kerentanan": {
-        "stunting": 0.40,
-        "kemiskinan": 0.25,
-        "ikp": 0.20,
-        "peserta_didik": 0.15,
-    },
-    "Seimbang": {
-        "stunting": 0.35,
-        "kemiskinan": 0.25,
-        "ikp": 0.15,
-        "peserta_didik": 0.25,
-    },
-    "Fokus cakupan": {
-        "stunting": 0.30,
-        "kemiskinan": 0.20,
-        "ikp": 0.15,
-        "peserta_didik": 0.35,
-    },
-}
+ANALYSIS_YEARS = (2022, 2023, 2024)
+ACTUAL_END_YEAR = 2024
+CURRENT_YEAR = ACTUAL_END_YEAR
+PROJECTION_YEAR = 2025
+PROJECTION_LABEL = f"Simulasi proyeksi {PROJECTION_YEAR} berbasis data 2022–{ACTUAL_END_YEAR}"
 
-# Label kuartil — posisi relatif, bukan standar kebijakan
-PRIORITY_QUARTILE_LABELS = {
-    "Q4 Sangat Tinggi": "Sangat perlu ditingkatkan",
-    "Q3 Tinggi": "Perlu ditingkatkan",
-    "Q2 Sedang": "Perlu dipantau",
-    "Q1 Rendah": "Relatif tidak prioritas",
-}
+# Threshold early warning (poin skor) — sama dengan pipeline scoring
+EARLY_WARNING_DELTA = 10.0
 
-# alias pendek untuk filter/warna
-PRIORITY_SHORT = {
-    "Q4 Sangat Tinggi": "Sangat Tinggi",
-    "Q3 Tinggi": "Tinggi",
-    "Q2 Sedang": "Sedang",
-    "Q1 Rendah": "Rendah",
-}
+# Status keputusan (label baru, decision-first)
+STATUS_PRIORITAS_UTAMA = "Prioritas utama"
+STATUS_EARLY_WARNING = "Early warning"
+STATUS_PERTAHANKAN = "Pertahankan intervensi"
+STATUS_PEMANTAUAN = "Pemantauan rutin"
 
-PRIORITY_LABELS = PRIORITY_QUARTILE_LABELS  # backward compat
-
-CLUSTER_NAME_TEMPLATES = [
-    "Gizi buruk, kemiskinan tinggi, IKP rendah",
-    "Populasi siswa besar, risiko sosial sedang",
-    "Gizi sedang, ketahanan pangan rendah",
-    "Kondisi relatif baik",
-    "Risiko campuran / transisi",
-    "Kerentanan tinggi dengan cakupan sedang",
+DECISION_STATUS_ORDER = [
+    STATUS_PRIORITAS_UTAMA,
+    STATUS_EARLY_WARNING,
+    STATUS_PERTAHANKAN,
+    STATUS_PEMANTAUAN,
 ]
 
-# Total kab/kota referensi IKP master (setelah cleaning)
+# Pemetaan label lama di analysis_ready.csv → label baru
+LEGACY_STATUS_MAP = {
+    "Tingkatkan segera": STATUS_PRIORITAS_UTAMA,
+    "Persiapkan ekspansi": STATUS_EARLY_WARNING,
+    "Pertahankan dan pantau": STATUS_PERTAHANKAN,
+    "Pemantauan rutin": STATUS_PEMANTAUAN,
+    STATUS_PRIORITAS_UTAMA: STATUS_PRIORITAS_UTAMA,
+    STATUS_EARLY_WARNING: STATUS_EARLY_WARNING,
+    STATUS_PERTAHANKAN: STATUS_PERTAHANKAN,
+    STATUS_PEMANTAUAN: STATUS_PEMANTAUAN,
+}
+
+DECISION_RECOMMENDATIONS = {
+    STATUS_PRIORITAS_UTAMA: (
+        "Prioritaskan verifikasi lapangan dan peningkatan cakupan MBG."
+    ),
+    STATUS_EARLY_WARNING: (
+        "Siapkan validasi lapangan, kapasitas layanan, dan rencana ekspansi bertahap."
+    ),
+    STATUS_PERTAHANKAN: (
+        "Pertahankan intervensi dan monitor agar perbaikan berlanjut."
+    ),
+    STATUS_PEMANTAUAN: (
+        "Lakukan pemantauan berkala. Belum menjadi prioritas ekspansi dibanding "
+        "wilayah dengan risiko nasional lebih tinggi."
+    ),
+}
+
+DECISION_ACTIONS = {
+    STATUS_PRIORITAS_UTAMA: "Verifikasi & tingkatkan",
+    STATUS_EARLY_WARNING: "Siapkan ekspansi",
+    STATUS_PERTAHANKAN: "Pertahankan program",
+    STATUS_PEMANTAUAN: "Monitor rutin",
+}
+
+STATUS_COLORS = {
+    STATUS_PRIORITAS_UTAMA: "#991B1B",  # merah tua
+    STATUS_EARLY_WARNING: "#EA580C",  # oranye
+    STATUS_PERTAHANKAN: "#1D4ED8",  # biru
+    STATUS_PEMANTAUAN: "#15803D",  # hijau
+    "Data tidak lengkap": "#94A3B8",  # abu-abu
+    "Tanpa data": "#94A3B8",
+    "Di luar filter": "#E2E8F0",
+}
+
+STATUS_ICONS = {
+    STATUS_PRIORITAS_UTAMA: "🔴",
+    STATUS_EARLY_WARNING: "🟠",
+    STATUS_PERTAHANKAN: "🔵",
+    STATUS_PEMANTAUAN: "🟢",
+}
+
+STATUS_TITLE_WHY = {
+    STATUS_PRIORITAS_UTAMA: "Mengapa wilayah ini menjadi prioritas?",
+    STATUS_EARLY_WARNING: "Mengapa wilayah ini perlu diantisipasi?",
+    STATUS_PERTAHANKAN: "Mengapa intervensi perlu dipertahankan?",
+    STATUS_PEMANTAUAN: "Mengapa wilayah ini cukup dipantau?",
+}
+
+TREND_STATUS_LABELS = {
+    "memburuk_cepat": "Memburuk cepat",
+    "cenderung_memburuk": "Cenderung memburuk",
+    "relatif_stabil": "Relatif stabil",
+    "membaik": "Membaik",
+}
+
 REFERENCE_WILAYAH_TOTAL = 514
 
 METHODOLOGY_NOTES = {
-    "peserta_didik": (
-        "Kolom 'Jumlah Peserta Didik' diambil dari portal Residu Data Induk "
-        "Kemendikdasmen, tetapi merupakan **total peserta didik** (bukan hitungan "
-        "residu NISN/kependudukan). Total nasional ~70 juta — konsisten dengan "
-        "populasi siswa lintas jenjang, bukan orde residual."
+    "indikator": (
+        "Analisis memakai tiga indikator: prevalensi stunting, persentase penduduk "
+        "miskin (P0), dan Indeks Ketahanan Pangan (IKP). Data peserta didik tidak "
+        "dimasukkan pada versi timeline ini."
+    ),
+    "percentile": (
+        "Risiko dihitung dengan percentile rank per indikator per tahun (0–100), "
+        "bukan min-max gabungan multi-tahun."
     ),
     "ikp_invert": (
-        "Nilai IKP dibalik setelah normalisasi min-max karena IKP lebih tinggi "
-        "berarti ketahanan pangan lebih baik; IKP rendah menaikkan skor kerentanan."
+        "IKP lebih tinggi berarti ketahanan pangan lebih baik. Kerawanan pangan "
+        "dihitung sebagai kebalikan percentile IKP."
     ),
-    "kuartil": (
-        "Kategori prioritas memakai kuartil skor (qcut): posisi relatif antarwilayah "
-        "dalam dataset, bukan batas standar kebijakan nasional."
+    "bobot": (
+        "Skor Prioritas = 47% risiko stunting + 29% risiko kemiskinan + "
+        "24% risiko kerawanan pangan."
+    ),
+    "proyeksi": (
+        f"{PROJECTION_LABEL}. Dipakai sebagai early warning / proyeksi indikatif, "
+        "bukan forecast operasional jangka panjang."
+    ),
+    "keputusan": (
+        "Status keputusan menggabungkan kuartil skor aktual dan kuartil proyeksi, "
+        f"ditambah aturan early warning jika lonjakan skor ≥ {EARLY_WARNING_DELTA:.0f} poin."
     ),
     "skor": (
-        "Skor 0–100 adalah skor relatif hasil normalisasi gabungan indikator. "
-        "Bukan persentase kebutuhan dan bukan estimasi anggaran."
+        "Skor 0–100 adalah prioritas relatif antarwilayah, bukan persentase kebutuhan "
+        "MBG dan bukan estimasi anggaran."
     ),
+}
+
+# Backward-compat aliases used by scoring (label lama)
+DECISION_STATUS = {
+    "tingkatkan_segera": STATUS_PRIORITAS_UTAMA,
+    "persiapkan_ekspansi": STATUS_EARLY_WARNING,
+    "pertahankan_pantau": STATUS_PERTAHANKAN,
+    "pemantauan_rutin": STATUS_PEMANTAUAN,
 }
